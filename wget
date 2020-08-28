@@ -1,0 +1,44 @@
+file download:  $ wget example.com/archive/file.exe
+
+file rename/dl: $ wget -O myfile.html example.com
+
+resume failed dl: wget -c example.com/test/file.zip
+
+save bandwidth dl: wget --limit-rate=10k example.com/test/file.zip
+
+dl bulk list:    $ wget example.com/pics/{1..30}.jpg
+
+
+dl bulk filetype: $ wget example.com/reports/*.pdf
+
+dl file in bg:    $ wget -b example.com/archive/ware.zip
+--check:          $ tail -f "wget-log.3"
+
+kill process:     $ pkill wget
+
+chk dl link exists: wget --spider example.com/files/ware.zip
+
+
+
+fake browser sending dl request: $ wget --user-agent="Chromium51.0/Version 1.2.3.4.5" example.com/files/test.zip
+
+size limit dl:    $ wget -Q1m -i example.com/test/file.zip
+*max 1mb*
+
+
+ftp file transfer: $ wget --ftp-user=nix --ftp-password=secretz example.com/test/file.zip
+
+
+mirror a site:    $ wget --mirror -p Download-example.com
+
+check new -v of file: $ wget -N example.com/test/file.zip
+
+convert weblinks to local links: $ wget -k -r example.com
+
+get dir listing of site:  $ wget ftp example.com links custom.html
+
+
+
+check for 301 redirects on ur site: 
+$ wget --spider -r mysite.com -o wget.log
+$ grep -B 301 wget.log
