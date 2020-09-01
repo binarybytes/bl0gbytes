@@ -8,13 +8,15 @@ wip
 # misp via docker: https://hub.docker.com/r/harvarditsecurity/misp #
 #------------------------------------------------------------------#
 
-initiliza misp db:
+//initiliza misp db:
  $  docker run -it --rm -v /docker/misp-db:/var/lib/mysql harvarditsecurity/misp /init-db
 
-gen ssl certs:
+//gen ssl certs:
 $ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /docker/certs/misp.key -out /docker/certs/misp.crt
 
-config dockerz:
+//enter to accepta defaults
+
+//config dockerz:
 $ docker run -it -d \
     -p 443:443 \
     -p 80:80 \
@@ -23,6 +25,30 @@ $ docker run -it -d \
     -v /docker/misp-db:/var/lib/mysql \
     harvarditsecurity/misp
     
+    
+    
+//list docker files: $ docker container ls
+//remove docker img: $ docker rm -f 'containerID'
+
+https://localhost
+
+//login to misp: admin@admin
+
+//configure misp:
+Administration > Server Settings & Maintenance > MISP Settings
+MISP.live to TRUE
+MISP.disable_emailing to TRUE
+MISP.baseurl to the IP of MISP
+
+Administration > Scheduled Tasks
+fetch_feeds to 24 + “Update All”
+
+Sync Actions > List Feeds
+choose list feeds (e.g, malwaredomainlist)
+Check the box and click “Enable Feed” at the top.
+
+``````````````````````````````````````````````````````````````````
+
 ***side note maria dB:
 
 /usr/bin/mysqladmin -u root password 'newpwd'
