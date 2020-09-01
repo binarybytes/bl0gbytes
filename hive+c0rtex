@@ -1,14 +1,33 @@
+#------------------------------------------------------------------#
+#                   download elasticsearch                         #
+#------------------------------------------------------------------#
 
-
-
+wip
 
 #------------------------------------------------------------------#
 # misp via docker: https://hub.docker.com/r/harvarditsecurity/misp #
+#------------------------------------------------------------------#
 
 initiliza misp db:
  $  docker run -it --rm -v /docker/misp-db:/var/lib/mysql harvarditsecurity/misp /init-db
 
+gen ssl certs:
+$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /docker/certs/misp.key -out /docker/certs/misp.crt
 
-
-
+config dockerz:
+$ docker run -it -d \
+    -p 443:443 \
+    -p 80:80 \
+    -p 3306:3306 \
+    -v /docker/certs:/etc/ssl/private \
+    -v /docker/misp-db:/var/lib/mysql \
+    harvarditsecurity/misp
+    
+    
+    
 #------------------------------------------------------------------#
+#                            c0rtex                                #
+#------------------------------------------------------------------#
+
+wip
+
