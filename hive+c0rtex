@@ -34,7 +34,7 @@ https://localhost
 
 //login to misp: admin [@] admin.test :: EMq42Y5NDhNpGv4 (r3)
 
-//configure misp:
+//configure misp + LOAD + enable LIVE FEEDS:
 Administration > Server Settings & Maintenance > MISP Settings
 MISP.live to TRUE
 MISP.disable_emailing to TRUE
