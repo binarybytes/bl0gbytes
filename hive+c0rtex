@@ -32,7 +32,7 @@ $ docker run -it -d \
 
 https://localhost
 
-//login to misp: admin@admin :: EMq42Y5NDhNpGv4 (r3)
+//login to misp: admin [@] admin.test :: EMq42Y5NDhNpGv4 (r3)
 
 //configure misp:
 Administration > Server Settings & Maintenance > MISP Settings
