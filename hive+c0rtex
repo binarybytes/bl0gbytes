@@ -1,0 +1,14 @@
+
+
+
+
+#------------------------------------------------------------------#
+# misp via docker: https://hub.docker.com/r/harvarditsecurity/misp #
+
+initiliza misp db:
+ $  docker run -it --rm -v /docker/misp-db:/var/lib/mysql harvarditsecurity/misp /init-db
+
+
+
+
+#------------------------------------------------------------------#
