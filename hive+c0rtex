@@ -23,6 +23,24 @@ $ docker run -it -d \
     -v /docker/misp-db:/var/lib/mysql \
     harvarditsecurity/misp
     
+***side note maria dB:
+
+/usr/bin/mysqladmin -u root password 'newpwd'
+/usr/bin/mysqladmin -u root -h 4c135ebee08c password 'newpwd'
+
+or
+
+/usr/bin/mysql_secure_installation
+
+start mariaDB daemon:
+$ cd /usr
+/usr/bin/mysql_safe --datadir='/var/lib/mysql'
+
+test daemon:
+
+$ cd /usr/mysql-test ; perl mysql-test-run.pl
+
+***
     
     
 #------------------------------------------------------------------#
