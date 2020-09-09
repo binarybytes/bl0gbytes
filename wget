@@ -42,3 +42,6 @@ get dir listing of site:  $ wget ftp example.com links custom.html
 check for 301 redirects on ur site: 
 $ wget --spider -r mysite.com -o wget.log
 $ grep -B 301 wget.log
+
+urlhause url query:
+$ wget -O- --post-data="url=http://sskymedia.com/VMYB-ht_JAQo-gi/INV/99401FORPO/20673114777/US/Outstanding-Invoices/" https://urlhaus-api.abuse.ch/v1/url/ 
