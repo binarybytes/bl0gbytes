@@ -1,0 +1,10 @@
+//docker
+$ docker run --volume /path/to/my/application.conf:/etc/cortex/application.conf thehiveproject/cortex:3.1.0-1 --es-uri http://elasticsearch.local:9200
+
+$ docker run --volume /var/run/docker.sock:/var/run/docker.sock --volume /var/run/cortex/jobs:/tmp/cortex-jobs thehiveproject/cortex:3.1.0-1 --job-directory /tmp/cortex-jobs --docker-job-directory /var/run/cortex/jobs
+
+
+Docker in docker (docker-ception)
+You can also run docker service inside Cortex container, a docker in a docker with --start-docker parameter. The container must be run in privileged mode.
+
+docker run --privileged thehiveproject/cortex:3.1.0-1 --start-docker
