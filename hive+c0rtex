@@ -69,11 +69,21 @@ test daemon:
 $ cd /usr/mysql-test ; perl mysql-test-run.pl
 
 ***
-    
-    
+
 #------------------------------------------------------------------#
 #                            c0rtex                                #
 #------------------------------------------------------------------#
 
-wip
+//analyzers + responders:
+$ sudo apt-get install -y --no-install-recommends python-pip python2.7-dev python3-pip python3-dev ssdeep libfuzzy-dev libfuzzy2 libimage-exiftool-perl libmagic1 build-essential git libssl-dev
+$ sudo pip install -U pip setuptools && sudo pip3 install -U pip setuptools
+
+//clone repoz
+$ git clone https://github.com/TheHive-Project/Cortex-Analyzers
+
+//install pip compatible requirements txt file
+$ for I in $(find Cortex-Analyzers -name 'requirements.txt'); do sudo -H pip2 install -r $I; done && \
+$ for I in $(find Cortex-Analyzers -name 'requirements.txt'); do sudo -H pip3 install -r $I || true; done
+
+
 
