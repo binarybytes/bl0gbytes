@@ -2,7 +2,11 @@
 #                   download elasticsearch                         #
 #------------------------------------------------------------------#
 
-wip
+$ curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.16.tar.gz
+$ tar -xvf elasticsearch-5.6.16.tar.gz
+$ cd elasticsearch-5.6.16/bin
+$ ./elasticsearch
+//macOS only: $ brew install elasticsearch
 
 #------------------------------------------------------------------#
 # misp via docker: https://hub.docker.com/r/harvarditsecurity/misp #
