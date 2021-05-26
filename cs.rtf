@@ -4,3 +4,10 @@ default var name = $dolt
 
 #decode gzip b64
 cyberchef, from b64 + gunzip
+
+#find mz value for magic number 
+remove gunzip
+add xor
+decimal = 35
+gives u mz value of the magic number
+
